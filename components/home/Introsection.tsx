@@ -29,10 +29,8 @@ export default function Introsection() {
             w-full
             px-8
             py-20
-
             sm:px-12
             sm:py-24
-
             lg:w-[70%]
             lg:px-[9%]
             lg:py-[100px]
@@ -43,24 +41,20 @@ export default function Introsection() {
           <h2
             className="
               max-w-[900px]
-
               font-serif
               text-[42px]
               font-normal
               leading-[1.18]
               tracking-[-0.025em]
-
               sm:text-[48px]
-
               lg:text-[54px]
               xl:text-[56px]
             "
           >
-            You’re holding onto hope that life
+            Honoring where you’ve been &amp;
             <br className="hidden lg:block" />
-            can be better than it is right now.
+            helping shape where you’re headed.
           </h2>
-
 
           {/* =========================
               TEXT COLUMNS
@@ -69,27 +63,22 @@ export default function Introsection() {
           <div
             className="
               mt-20
-
               grid
               grid-cols-1
               gap-12
-
               md:grid-cols-2
               md:gap-14
-
               lg:mt-[92px]
               lg:grid-cols-[0.9fr_1fr]
               lg:gap-[70px]
             "
           >
-
             {/* COLUMN ONE */}
 
             <div>
               <p
                 className="
                   max-w-[390px]
-
                   text-[15px]
                   font-medium
                   uppercase
@@ -98,18 +87,17 @@ export default function Introsection() {
                   text-[var(--color-blue)]
                 "
               >
-                AT CONEJO VALLEY FAMILY
+                THERAPY FOR ADULTS
                 <br />
-                COUNSELING WE WANT TO MAKE
+                READY TO UNDERSTAND
                 <br />
-                THAT HOPE A REALITY.
+                THEMSELVES MORE DEEPLY.
               </p>
 
               <p
                 className="
                   mt-7
                   max-w-[390px]
-
                   text-[18px]
                   font-normal
                   leading-[2.05]
@@ -117,16 +105,13 @@ export default function Introsection() {
                   text-[var(--color-blue)]
                 "
               >
-                Whether you're an adult seeking personal
-                growth, looking to work through your
-                trauma, a couple working on your
-                relationship, or a parent looking for
-                support for your child, we provide a
-                compassionate and safe space to help
-                you navigate all of life’s ups and downs.
+                When anxiety, stress, or the lingering effects
+                of past experiences begin to shape how you
+                think, feel, and move through life, therapy can
+                offer a space to slow down, reflect, and find
+                your footing again.
               </p>
             </div>
-
 
             {/* COLUMN TWO */}
 
@@ -134,7 +119,6 @@ export default function Introsection() {
               <p
                 className="
                   max-w-[420px]
-
                   text-[18px]
                   font-normal
                   leading-[2.05]
@@ -142,22 +126,16 @@ export default function Introsection() {
                   text-[var(--color-blue)]
                 "
               >
-                First and foremost, we believe what
-                you’re going through is real, valid, and
-                worthy of support. Our team offers clients
-                in the Newbury Park area and across CA
-                an environment to discover a new life and
-                a deeper sense of self in the midst of their
-                struggles. As we tap into the power of
-                connection and understanding, you can
-                find your footing again and take a
-                transformative path forward.
+                Dr. Maya Reynolds offers warm, collaborative
+                therapy for adults in Santa Monica who may
+                feel exhausted, stuck in overthinking, or
+                emotionally on edge. Together, therapy can
+                create greater insight, resilience, and a
+                stronger relationship with yourself.
               </p>
             </div>
-
           </div>
         </div>
-
 
         {/* =========================
             RIGHT IMAGE
@@ -168,9 +146,7 @@ export default function Introsection() {
             relative
             h-[500px]
             w-full
-
             md:h-[650px]
-
             lg:absolute
             lg:right-0
             lg:top-0
@@ -179,8 +155,8 @@ export default function Introsection() {
           "
         >
           <Image
-            src="/images/03.webp"
-            alt="Ocean and beach"
+            src="/images/con3.jfif"
+            alt="Calm and peaceful therapy environment"
             fill
             sizes="30vw"
             className="
@@ -189,7 +165,6 @@ export default function Introsection() {
             "
           />
         </div>
-
       </div>
     </section>
   );

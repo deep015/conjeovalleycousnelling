@@ -3,24 +3,24 @@ import Image from "next/image";
 const people = [
   {
     title: "Adults",
-    image: "/images/04.webp",
-    alt: "Adults sitting together near the ocean",
+    image: "/images/wh1.jfif",
+    alt: "Adult sitting in a calm and peaceful environment",
     description:
-      "Feeling stuck or overwhelmed? We help adults find clarity, build resilience, and move forward with confidence by addressing the root causes of anxiety, stress, and emotional pain.",
+      "For adults feeling overwhelmed by anxiety, stress, or constant overthinking. Therapy offers a grounded space to slow down, gain clarity, and develop practical tools for moving forward.",
   },
   {
-    title: "Couples",
-    image: "/images/5.webp",
-    alt: "Couple standing together near the ocean",
+    title: "High-Achieving Professionals",
+    image: "/images/pro.png",
+    alt: "Professional adult in a calm environment",
     description:
-      "Relationships require effort, and we’re here to help you strengthen yours. We guide couples through challenges like communication breakdowns and trust issues, helping you rebuild intimacy and strengthen your relationship.",
+      "Many of my clients are professionals, entrepreneurs, and creatives who are used to carrying a lot. Together, we can explore burnout, perfectionism, and the pressure to always keep going.",
   },
   {
-    title: "Children & Teens",
-    image: "/images/6.webp",
-    alt: "Children playing together at the beach",
+    title: "Adults Healing From Trauma",
+    image: "/images/who3.jfif",
+    alt: "Adult reflecting in a peaceful environment",
     description:
-      "Kids need support, too. We help them process big emotions, cope with challenging family situations, build coping skills, and feel understood, while also working closely with their parents to create a nurturing environment.",
+      "Past experiences can shape relationships, confidence, and your sense of safety. Trauma therapy provides a carefully paced space to build safety, regulation, understanding, and resilience.",
   },
 ];
 
@@ -36,7 +36,6 @@ export default function WhoWeHelp() {
       "
     >
       {/* Section heading */}
-
       <div
         className="
           px-8
@@ -57,13 +56,11 @@ export default function WhoWeHelp() {
             font-normal
             leading-none
             tracking-[-0.035em]
-
             sm:text-[50px]
-
             lg:text-[56px]
           "
         >
-          <span>Who we</span>
+          <span>Who I</span>
 
           <span
             className="
@@ -73,16 +70,12 @@ export default function WhoWeHelp() {
               text-[1.05em]
             "
           >
-            help
+            work with
           </span>
         </h2>
       </div>
 
-
-      {/* =========================
-          THREE COLUMN GRID
-      ========================== */}
-
+      {/* THREE COLUMN GRID */}
       <div
         className="
           mx-auto
@@ -90,9 +83,7 @@ export default function WhoWeHelp() {
           w-full
           max-w-[1278px]
           px-8
-
           sm:px-12
-
           lg:px-0
         "
       >
@@ -101,9 +92,7 @@ export default function WhoWeHelp() {
             grid
             grid-cols-1
             gap-[70px]
-
             md:grid-cols-2
-
             lg:grid-cols-3
             lg:gap-[25px]
           "
@@ -114,7 +103,6 @@ export default function WhoWeHelp() {
               className="w-full"
             >
               {/* Image */}
-
               <div
                 className="
                   relative
@@ -132,30 +120,21 @@ export default function WhoWeHelp() {
                     (max-width: 1023px) 50vw,
                     33vw
                   "
-                  className="
-                    object-cover
-                  "
+                  className="object-cover"
                 />
               </div>
 
-
               {/* Card content */}
-
-              <div
-                className="
-                  pt-[62px]
-                "
-              >
+              <div className="pt-[62px]">
                 <h3
                   className="
+                    max-w-[380px]
                     font-serif
                     text-[29px]
                     font-normal
                     leading-[1.15]
                     tracking-[-0.025em]
-
                     sm:text-[30px]
-
                     lg:text-[31px]
                   "
                 >
@@ -171,7 +150,6 @@ export default function WhoWeHelp() {
                     leading-[1.9]
                     tracking-[-0.01em]
                     text-[var(--color-blue)]
-
                     lg:text-[19px]
                   "
                 >
@@ -184,7 +162,6 @@ export default function WhoWeHelp() {
       </div>
 
       {/* Bottom breathing space */}
-
       <div className="h-[110px] lg:h-[150px]" />
     </section>
   );

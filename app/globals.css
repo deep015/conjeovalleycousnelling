@@ -28,48 +28,53 @@
   font-display: swap;
 }
 
-
 /* =========================================================
    ROOT / DESIGN TOKENS
    ========================================================= */
 
 :root {
-  /* Main colors */
-  --background: #f7f4ee;
+  /* Main Theme */
+  --background: #f7f5ef;
   --foreground: #252525;
-
   --surface: #ffffff;
-  --surface-muted: #eeebe4;
+  --surface-muted: #ebe3d6;
 
+  /* Brand Palette */
+  --cream: #f7f5ef;
+  --warm-white: #fcfaf6;
+  --dark: #292929;
+  --body-text: #55524d;
+  --blue: #28516b;
+  --teal: #6d9c98;
+  --sage: #6d9c98;
+  --sage-light: #e9decc;
+  --terracotta: #b8755f;
+
+  /* Compatibility aliases */
+  --color-cream: var(--cream);
+  --color-blue: var(--blue);
+
+  /* Text */
   --text-primary: #252525;
   --text-secondary: #66625d;
-  --text-light: #f7f4ee;
+  --text-light: #f7f5ef;
 
+  /* UI */
   --border: #d9d5ce;
-
-  --accent: #252525;
-  --accent-hover: #44413c;
+  --accent: #6d9c98;
+  --accent-hover: #557f7b;
 
   /* Fonts */
-
   --font-body: "Muli", sans-serif;
   --font-heading: "Cormorant Garamond", serif;
   --font-script: var(--font-script-google), cursive;
 
-
   /* Layout */
   --container-width: 1280px;
   --container-padding: clamp(1.25rem, 4vw, 4rem);
+
   --section-space: clamp(5rem, 10vw, 9rem);
 
-  /* Existing project colors */
-  --cream: #f6f4ee;
-  --dark: #292929;
-  --body-text: #4d4b48;
-  --blue: #173d57;
-  --teal: #79b6bb;
-
-  /* Existing layout values */
   --header-height: 169px;
   --hero-height: 640px;
 
@@ -78,7 +83,6 @@
   --transition-fast: 180ms ease;
   --transition-normal: 300ms ease;
 }
-
 
 /* =========================================================
    RESET / BASE
@@ -90,12 +94,14 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
+  max-width: 100%;
 }
 
 body {
@@ -103,7 +109,6 @@ body {
   color: var(--dark);
   font-family: var(--font-body);
   overflow-x: hidden;
-
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -128,10 +133,9 @@ img {
 }
 
 ::selection {
-  background: var(--foreground);
-  color: var(--background);
+  background: var(--blue);
+  color: var(--cream);
 }
-
 
 /* =========================================================
    TYPOGRAPHY
@@ -144,8 +148,24 @@ h4 {
   margin-top: 0;
   font-family: var(--font-heading);
   font-weight: 400;
+  max-width: 100%;
 }
 
+p {
+  margin-top: 0;
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
 
 /* =========================================================
    HEADER
@@ -163,15 +183,12 @@ h4 {
   position: relative;
   width: 100%;
   height: 100%;
-
   padding-left: 6.05vw;
   padding-right: 5.1vw;
-
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
 }
-
 
 /* =========================================================
    LOGO
@@ -190,7 +207,6 @@ h4 {
   height: auto;
 }
 
-
 /* =========================================================
    NAVIGATION
    ========================================================= */
@@ -204,34 +220,28 @@ h4 {
 
 .navigation-link {
   position: relative;
-
   color: #3d3c3a;
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 400;
-
   letter-spacing: 0.11em;
   line-height: 1;
   white-space: nowrap;
-
-  transition: opacity 0.2s ease;
+  transition: opacity var(--transition-fast);
 }
 
 .navigation-link:hover {
   opacity: 0.55;
 }
 
-
 /* =========================================================
-   CONTACT
+   CONTACT BUTTON
    ========================================================= */
 
 .contact-link {
   width: 111px;
   height: 50px;
-
   margin-top: -10px;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -243,12 +253,11 @@ h4 {
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 400;
-
   letter-spacing: 0.12em;
 
   transition:
-    background 0.2s ease,
-    color 0.2s ease;
+    background var(--transition-fast),
+    color var(--transition-fast);
 }
 
 .contact-link:hover {
@@ -256,17 +265,14 @@ h4 {
   color: var(--cream);
 }
 
-
 /* =========================================================
    MOBILE MENU
    ========================================================= */
 
 .mobile-menu-button {
   display: none;
-
   width: 40px;
   height: 40px;
-
   padding: 0;
   border: 0;
   background: transparent;
@@ -275,17 +281,20 @@ h4 {
   align-items: center;
   justify-content: center;
   gap: 7px;
+
+  cursor: pointer;
 }
 
 .mobile-menu-button span {
   display: block;
-
   width: 24px;
   height: 1px;
-
   background: var(--dark);
-}
 
+  transition:
+    transform var(--transition-normal),
+    opacity var(--transition-normal);
+}
 
 /* =========================================================
    HERO
@@ -293,15 +302,11 @@ h4 {
 
 .hero-section {
   position: relative;
-
   width: 100%;
   height: var(--hero-height);
-
   background: var(--cream);
-
   overflow: hidden;
 }
-
 
 /* =========================================================
    HERO - LEFT IMAGE
@@ -309,7 +314,6 @@ h4 {
 
 .hero-left-image {
   position: absolute;
-
   left: 0;
   top: 0;
 
@@ -324,14 +328,12 @@ h4 {
   object-position: center center;
 }
 
-
 /* =========================================================
    HERO - CENTER CONTENT
    ========================================================= */
 
 .hero-content {
   position: absolute;
-
   left: 42.8%;
   top: 0;
 
@@ -340,7 +342,6 @@ h4 {
 
   z-index: 10;
 }
-
 
 /* =========================================================
    HERO - EYEBROW
@@ -351,14 +352,11 @@ h4 {
 
   color: var(--blue);
   font-family: var(--font-body);
-
   font-size: 15px;
   font-weight: 400;
-
   line-height: 1.75;
   letter-spacing: 0.16em;
 }
-
 
 /* =========================================================
    HERO - MAIN HEADING
@@ -370,17 +368,13 @@ h4 {
   color: var(--dark);
   font-family: var(--font-heading);
 
-  font-size: clamp(
-    52px,
-    4.05vw,
-    67px
-  );
-
+  font-size: clamp(52px, 4.05vw, 67px);
   font-weight: 400;
   line-height: 1.27;
   letter-spacing: -0.025em;
-}
 
+  max-width: 100%;
+}
 
 /* =========================================================
    HERO - SCRIPT WORD
@@ -388,13 +382,16 @@ h4 {
 
 .hero-script {
   display: inline-block;
+
   color: var(--teal);
   font-family: var(--font-script);
-  font-size: 1.08em;
+
   font-weight: 400;
   font-style: normal;
   letter-spacing: -0.025em;
+
   transform: rotate(-2deg);
+
   white-space: nowrap;
 }
 
@@ -403,6 +400,7 @@ h4 {
    ========================================================= */
 
 .hero-description {
+  max-width: 570px;
   margin: 36px 0 0;
 
   color: var(--body-text);
@@ -410,10 +408,8 @@ h4 {
 
   font-size: 16px;
   font-weight: 400;
-
   line-height: 1.65;
 }
-
 
 /* =========================================================
    HERO - APPOINTMENT
@@ -422,7 +418,6 @@ h4 {
 .hero-appointment {
   display: inline-flex;
   align-items: center;
-
   gap: 45px;
 
   margin-top: 51px;
@@ -435,13 +430,12 @@ h4 {
 
   font-size: 13px;
   font-weight: 400;
-
   letter-spacing: 0.12em;
   line-height: 1;
 
   transition:
-    opacity 0.2s ease,
-    gap 0.2s ease;
+    opacity var(--transition-fast),
+    gap var(--transition-fast);
 }
 
 .hero-appointment:hover {
@@ -454,7 +448,6 @@ h4 {
   line-height: 0;
   letter-spacing: 0;
 }
-
 
 /* =========================================================
    HERO - RIGHT IMAGE
@@ -470,7 +463,6 @@ h4 {
   height: 422px;
 
   overflow: hidden;
-
   z-index: 20;
 }
 
@@ -479,6 +471,70 @@ h4 {
   object-position: center center;
 }
 
+/* =========================================================
+   REUSABLE UNDERLINE
+   ========================================================= */
+
+.link-underline {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+.link-underline::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background-color: #333333;
+
+  transform: scaleX(1);
+  transform-origin: left;
+
+  transition: transform 0.5s ease;
+}
+
+.link-underline:hover::after {
+  transform: scaleX(0.1);
+}
+
+/* =========================================================
+   GENERAL ACCESSIBILITY
+   ========================================================= */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 4px;
+}
+
+/* =========================================================
+   RESPONSIVE SAFETY
+   ========================================================= */
+
+section,
+header,
+footer {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+}
 
 /* =========================================================
    LAPTOP
@@ -527,12 +583,7 @@ h4 {
 
   .hero-title {
     margin-top: 135px;
-
-    font-size: clamp(
-      42px,
-      4.8vw,
-      56px
-    );
+    font-size: clamp(42px, 4.8vw, 56px);
   }
 
   .hero-description {
@@ -544,7 +595,6 @@ h4 {
     height: 390px;
   }
 }
-
 
 /* =========================================================
    TABLET
@@ -590,8 +640,11 @@ h4 {
     margin-top: 110px;
     font-size: 46px;
   }
-}
 
+  .hero-description {
+    max-width: 470px;
+  }
+}
 
 /* =========================================================
    MOBILE
@@ -602,7 +655,9 @@ h4 {
     --header-height: 92px;
   }
 
-  /* Header */
+  /* -------------------------------------------------------
+     Header
+     ------------------------------------------------------- */
 
   .site-header-inner {
     height: var(--header-height);
@@ -626,46 +681,52 @@ h4 {
     display: flex;
   }
 
-
-  /* Hero */
+  /* -------------------------------------------------------
+     Hero
+     ------------------------------------------------------- */
 
   .hero-section {
-    height: auto;
+    position: relative;
 
-    overflow: visible;
+    width: 100%;
+    height: 600px;
 
-    display: flex;
-    flex-direction: column;
+    overflow: hidden;
+
+    display: block;
   }
 
   .hero-left-image {
-    position: relative;
+    position: absolute;
 
-    order: 1;
+    inset: 0;
 
     width: 100%;
-    height: 470px;
+    height: 100%;
+
+    z-index: 1;
   }
 
   .hero-content {
-    position: relative;
+    position: absolute;
 
-    order: 2;
+    inset: 0;
 
-    left: auto;
-    top: auto;
+    left: 0;
+    top: 0;
 
     width: 100%;
-    height: auto;
+    height: 100%;
 
     padding: 48px 24px 75px;
+
+    z-index: 10;
   }
 
   .hero-eyebrow {
     margin: 0;
 
     font-size: 10px;
-
     line-height: 1.8;
     letter-spacing: 0.14em;
   }
@@ -673,18 +734,19 @@ h4 {
   .hero-title {
     margin-top: 53px;
 
-    font-size: clamp(
-      42px,
-      12vw,
-      58px
-    );
-
+    font-size: clamp(32px, 10vw, 52px);
     line-height: 1.08;
+
+    max-width: 680px;
   }
 
   .hero-description {
+    max-width: 570px;
+
     margin-top: 30px;
+
     font-size: 15px;
+    line-height: 1.7;
   }
 
   .hero-appointment {
@@ -695,57 +757,139 @@ h4 {
   .hero-right-image {
     display: none;
   }
-}
 
+  /* -------------------------------------------------------
+     Global Mobile Typography
+     ------------------------------------------------------- */
+
+  h1,
+  h2,
+  h3 {
+    max-width: 100%;
+    word-break: normal;
+    overflow-wrap: normal;
+  }
+}
 
 /* =========================================================
-   REUSABLE FONT UTILITY CLASSES
+   SMALL MOBILE
    ========================================================= */
 
-.font-body {
-  font-family: var(--font-body);
-}
+@media (max-width: 480px) {
+  .site-header-inner {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
 
-.font-heading {
-  font-family: var(--font-heading);
-}
+  .site-logo {
+    width: 165px;
+  }
 
-.font-script {
-  font-family: var(--font-script);
-}
+  /* Hero stays as image background */
+  .hero-section {
+    height: 560px;
+  }
 
+  .hero-left-image {
+    height: 100%;
+  }
+
+  .hero-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero-title {
+    font-size: clamp(30px, 9vw, 42px);
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+}
 
 /* =========================================================
-   REUSABLE ANIMATED UNDERLINE
+   FINAL CTA
+   Text remains OVER the image at every screen size
    ========================================================= */
 
-.link-underline {
+#cta {
   position: relative;
-
-  display: inline-block;
-
-  padding-bottom: 8px;
-}
-
-.link-underline::after {
-  content: "";
-
-  position: absolute;
-
-  left: 0;
-  bottom: 0;
-
   width: 100%;
-  height: 1px;
-
-  background-color: #333333;
-
-  transform: scaleX(1);
-  transform-origin: left;
-
-  transition: transform 0.5s ease;
+  overflow: hidden;
 }
 
-.link-underline:hover::after {
-  transform: scaleX(0.1);
+#cta h2 {
+  max-width: 950px;
+
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 5vw, 58px);
+  font-weight: 300;
+
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+#cta p {
+  max-width: 900px;
+}
+
+@media (max-width: 767px) {
+  #cta {
+    min-height: 600px;
+  }
+
+  #cta h2 {
+    font-size: clamp(30px, 9vw, 42px);
+    line-height: 1.08;
+  }
+}
+
+@media (max-width: 480px) {
+  #cta {
+    min-height: 560px;
+  }
+
+  #cta h2 {
+    font-size: clamp(28px, 8.5vw, 36px);
+  }
+}
+
+/* =========================================================
+   RESPONSIVE TEXT PROTECTION
+   ========================================================= */
+
+@media (max-width: 767px) {
+  .hero-title,
+  #cta h2 {
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  /* Prevent accidental horizontal overflow */
+  .hero-section,
+  #cta {
+    max-width: 100vw;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }

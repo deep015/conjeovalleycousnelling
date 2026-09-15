@@ -5,10 +5,11 @@ import  WhoWeHelp  from "@/components/home/WhoWeHelp";
 import FinalCTA from "@/components/home/FinalCTA";
 import Expertise from "@/components/home/Experstise";
 import HowWeWork from "@/components/home/HowWeWork";
-import Family from "@/components/home/Family";
 import Specialties from "@/components/home/Specialties";
 import ScheduleAppointment from "@/components/home/ScheduleAppointment";
 import Footer from "@/components/layout/Footer";
+import OurOffice from "@/components/home/OurOffice";
+import FAQs from "@/components/home/FAQs";
 
 export default function Home() {
   return (
@@ -22,8 +23,10 @@ export default function Home() {
         <FinalCTA />
         <Expertise />
         <HowWeWork />
-        <Family />
+ 
         <Specialties />
+        <OurOffice/>
+        <FAQs />
         <ScheduleAppointment />
         <Footer />
       </main>

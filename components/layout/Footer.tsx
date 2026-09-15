@@ -1,13 +1,9 @@
-
-import Image from "next/image";
-
 export default function Footer() {
   return (
     <footer className="w-full bg-white text-[#3f3f3f]">
 
-      {/* =========================
-          MAIN FOOTER
-      ========================== */}
+      {/* MAIN FOOTER */}
+
       <div
         className="
           mx-auto
@@ -15,7 +11,7 @@ export default function Footer() {
           max-w-[1440px]
           px-[7.5%]
           pt-[80px]
-          pb-[125px]
+          pb-[110px]
           lg:px-[6.8%]
         "
       >
@@ -30,26 +26,54 @@ export default function Footer() {
           "
         >
 
-          {/* =========================
-              BRAND / DESCRIPTION
-          ========================== */}
-          <div className="w-[390px] max-w-full">
-  <Image
-    src="/images/logo.webp"
-    alt="Conejo Valley Family Counseling"
-    width={390}
-    height={100}
-    priority
-    className="h-auto w-full object-contain object-left"
-  />
-</div>
+          {/* BRAND */}
 
+          <div className="max-w-[390px]">
+            <h2
+              className="
+                font-[var(--font-heading)]
+                text-[38px]
+                font-light
+                leading-[1.05]
+                tracking-[-0.02em]
+                text-[#333333]
+              "
+            >
+              Dr. Maya Reynolds
+            </h2>
 
-          {/* =========================
-              NAVIGATE
-          ========================== */}
+            <p
+              className="
+                mt-[12px]
+                font-[var(--font-body)]
+                text-[15px]
+                uppercase
+                tracking-[0.12em]
+                text-[#6b6b6b]
+              "
+            >
+              PsyD · Licensed Clinical Psychologist
+            </p>
+
+            <p
+              className="
+                mt-[28px]
+                max-w-[360px]
+                font-[var(--font-body)]
+                text-[17px]
+                leading-[1.8]
+                text-[#555555]
+              "
+            >
+              Warm, grounded therapy for adults navigating
+              anxiety, trauma, stress, burnout, and the
+              lingering effects of past experiences.
+            </p>
+          </div>
+
+          {/* NAVIGATE */}
+
           <div>
-
             <h3
               className="
                 font-[var(--font-body)]
@@ -72,7 +96,7 @@ export default function Footer() {
               "
             >
               <a
-                href="#"
+                href="/"
                 className="
                   w-fit
                   font-[var(--font-body)]
@@ -88,7 +112,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="#"
+                href="#about"
                 className="
                   w-fit
                   font-[var(--font-body)]
@@ -104,7 +128,55 @@ export default function Footer() {
               </a>
 
               <a
-                href="#"
+                href="#specialties"
+                className="
+                  w-fit
+                  font-[var(--font-body)]
+                  text-[17px]
+                  leading-[1.25]
+                  text-[#3f3f3f]
+                  transition-opacity
+                  duration-300
+                  hover:opacity-60
+                "
+              >
+                Services
+              </a>
+
+              <a
+                href="#methods"
+                className="
+                  w-fit
+                  font-[var(--font-body)]
+                  text-[17px]
+                  leading-[1.25]
+                  text-[#3f3f3f]
+                  transition-opacity
+                  duration-300
+                  hover:opacity-60
+                "
+              >
+                Approach
+              </a>
+
+              <a
+                href="#office"
+                className="
+                  w-fit
+                  font-[var(--font-body)]
+                  text-[17px]
+                  leading-[1.25]
+                  text-[#3f3f3f]
+                  transition-opacity
+                  duration-300
+                  hover:opacity-60
+                "
+              >
+                Our Office
+              </a>
+
+              <a
+                href="#faqs"
                 className="
                   w-fit
                   font-[var(--font-body)]
@@ -120,7 +192,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="#"
+                href="#contact"
                 className="
                   w-fit
                   font-[var(--font-body)]
@@ -137,12 +209,9 @@ export default function Footer() {
             </nav>
           </div>
 
+          {/* THERAPY */}
 
-          {/* =========================
-              OUR TEAM
-          ========================== */}
           <div>
-
             <h3
               className="
                 font-[var(--font-body)]
@@ -153,7 +222,7 @@ export default function Footer() {
                 text-[#28516b]
               "
             >
-              Our Team
+              Therapy
             </h3>
 
             <div
@@ -164,54 +233,36 @@ export default function Footer() {
                 gap-[8px]
                 font-[var(--font-body)]
                 text-[17px]
-                leading-[1.25]
+                leading-[1.35]
                 text-[#3f3f3f]
               "
             >
-              <a href="#" className="hover:opacity-60 transition-opacity">
-                Jennifer Anderson
+              <a
+                href="#specialties"
+                className="transition-opacity hover:opacity-60"
+              >
+                Anxiety &amp; Stress
               </a>
 
-              <a href="#" className="hover:opacity-60 transition-opacity">
-                Heather Williams-Baumgart
+              <a
+                href="#specialties"
+                className="transition-opacity hover:opacity-60"
+              >
+                Trauma Therapy
               </a>
 
-              <a href="#" className="hover:opacity-60 transition-opacity">
-                Autumn Bodily
-              </a>
-
-              <a href="#" className="hover:opacity-60 transition-opacity">
-                Michaela Gorospe
-              </a>
-
-              <a href="#" className="hover:opacity-60 transition-opacity">
-                Candace Bletscher
-              </a>
-
-              <a href="#" className="hover:opacity-60 transition-opacity">
-                Samantha Johnson
-              </a>
-
-              <a href="#" className="hover:opacity-60 transition-opacity">
-                Andrea Watkins
-              </a>
-
-              <a href="#" className="hover:opacity-60 transition-opacity">
-                Rosa Gomez
-              </a>
-
-              <a href="#" className="hover:opacity-60 transition-opacity">
-                Chad Flores
+              <a
+                href="#specialties"
+                className="transition-opacity hover:opacity-60"
+              >
+                Burnout &amp; Perfectionism
               </a>
             </div>
           </div>
 
+          {/* LOCATION */}
 
-          {/* =========================
-              CONTACT
-          ========================== */}
           <div>
-
             <h3
               className="
                 font-[var(--font-body)]
@@ -222,7 +273,7 @@ export default function Footer() {
                 text-[#28516b]
               "
             >
-              Contact
+              Location
             </h3>
 
             <div
@@ -234,31 +285,23 @@ export default function Footer() {
                 text-[#3f3f3f]
               "
             >
-              <p>925 Broadbeck Dr</p>
-              <p>Suites 200 and 225</p>
-              <p>Newbury Park, CA 91320</p>
+              <p>123th Street 45 W</p>
+              <p>Santa Monica, CA 90401</p>
 
-              <p className="mt-[1px]">
-                info@conejovalleycounseling.com
-              </p>
-
-              <p>805.242.3120</p>
-
-              {/* Service area */}
               <p
                 className="
-                  mt-[23px]
-                  max-w-[330px]
+                  mt-[20px]
+                  max-w-[300px]
                   font-[var(--font-heading)]
-                  text-[18px]
+                  text-[19px]
                   italic
-                  leading-[1.7]
+                  leading-[1.6]
                   text-[#555555]
                 "
               >
-                Serving Thousand Oaks, Westlake
-                Village, Camarillo, Moorpark, &amp; Simi
-                Valley
+                In-person therapy in Santa Monica and
+                secure telehealth for clients located
+                in California.
               </p>
             </div>
           </div>
@@ -266,10 +309,8 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* BOTTOM LEGAL BAR */}
 
-      {/* =========================
-          BOTTOM LEGAL BAR
-      ========================== */}
       <div
         className="
           flex
@@ -283,16 +324,16 @@ export default function Footer() {
         <p
           className="
             font-[var(--font-body)]
-            text-[16px]
+            text-[14px]
             font-normal
-            leading-none
+            leading-[1.5]
             text-white
+            sm:text-[16px]
           "
         >
-          Terms | Privacy Policy | Disclaimer | Website by Walker Strategy Co.
+          © {new Date().getFullYear()} Dr. Maya Reynolds, PsyD. All rights reserved.
         </p>
       </div>
-
     </footer>
   );
 }

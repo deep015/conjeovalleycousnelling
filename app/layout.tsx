@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Allura } from "next/font/google";
+
 import "./globals.css";
 
 const headingFont = Cormorant_Garamond({
@@ -18,9 +19,19 @@ const scriptFont = Allura({
 });
 
 export const metadata: Metadata = {
-  title: "Conejo Valley Family Counseling",
+  title: "Dr. Maya Reynolds, PsyD | Clinical Psychologist in Santa Monica",
   description:
-    "Online and in-person counseling for adults, couples, teens, and children.",
+    "Dr. Maya Reynolds is a licensed clinical psychologist in Santa Monica, California, offering grounded therapy for adults navigating anxiety, trauma, stress, burnout, and perfectionism.",
+  keywords: [
+    "Dr. Maya Reynolds",
+    "clinical psychologist Santa Monica",
+    "therapy Santa Monica",
+    "anxiety therapy Santa Monica",
+    "trauma therapy Santa Monica",
+    "burnout therapy Santa Monica",
+    "perfectionism therapy",
+    "adult therapy California",
+  ],
 };
 
 export default function RootLayout({
@@ -30,7 +41,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${headingFont.variable} ${scriptFont.variable}`}>
+      <body
+        className={`${headingFont.variable} ${scriptFont.variable}`}
+      >
         {children}
       </body>
     </html>
