@@ -9,7 +9,7 @@ export default function FinalCTA() {
       {/* IMAGE */}
       <div className="relative h-[600px] w-full sm:h-[650px] md:h-[680px] lg:h-[665px]">
         <Image
-          src="/images/beee.jfif"
+          src="/images/beee.png"
           alt="Peaceful natural landscape"
           fill
           sizes="100vw"

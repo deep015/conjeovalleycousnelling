@@ -155,7 +155,7 @@ export default function Introsection() {
           "
         >
           <Image
-            src="/images/con3.jfif"
+            src="/images/con3.png"
             alt="Calm and peaceful therapy environment"
             fill
             sizes="30vw"

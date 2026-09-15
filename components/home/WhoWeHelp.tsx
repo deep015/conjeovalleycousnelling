@@ -3,7 +3,7 @@ import Image from "next/image";
 const people = [
   {
     title: "Adults",
-    image: "/images/wh1.jfif",
+    image: "/images/wh1.png",
     alt: "Adult sitting in a calm and peaceful environment",
     description:
       "For adults feeling overwhelmed by anxiety, stress, or constant overthinking. Therapy offers a grounded space to slow down, gain clarity, and develop practical tools for moving forward.",
@@ -17,7 +17,7 @@ const people = [
   },
   {
     title: "Adults Healing From Trauma",
-    image: "/images/who3.jfif",
+    image: "/images/who3.png",
     alt: "Adult reflecting in a peaceful environment",
     description:
       "Past experiences can shape relationships, confidence, and your sense of safety. Trauma therapy provides a carefully paced space to build safety, regulation, understanding, and resilience.",

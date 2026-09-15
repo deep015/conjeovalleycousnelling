@@ -2,11 +2,11 @@ import Image from "next/image";
 
 const officeImages = [
   {
-    src: "/images/office.jfif",
+    src: "/images/office.png",
     alt: "Dr. Maya Reynolds therapy office in Santa Monica",
   },
   {
-    src: "/images/office1.jfif",
+    src: "/images/office1.png",
     alt: "Quiet and comfortable therapy space in Santa Monica",
   },
  
