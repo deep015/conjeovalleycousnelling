@@ -1,23 +1,32 @@
+import  Header  from "@/components/layout/Header";
+import  Hero  from "@/components/home/Hero";
+import  Introsection  from "@/components/home/Introsection";
+import  WhoWeHelp  from "@/components/home/WhoWeHelp";
+import FinalCTA from "@/components/home/FinalCTA";
+import Expertise from "@/components/home/Experstise";
+import HowWeWork from "@/components/home/HowWeWork";
+import Family from "@/components/home/Family";
+import Specialties from "@/components/home/Specialties";
+import ScheduleAppointment from "@/components/home/ScheduleAppointment";
+import Footer from "@/components/layout/Footer";
+
 export default function Home() {
   return (
-    <main>
-      <section className="min-h-screen">
-        <div className="mx-auto flex min-h-screen max-w-[1280px] items-center px-[clamp(1.25rem,4vw,4rem)]">
-          <div>
-            <p className="mb-4 text-xs uppercase tracking-[0.2em]">
-              Online & In-Person Counseling
-            </p>
+    <>
+      <Header />
 
-            <h1 className="max-w-4xl text-[clamp(3.5rem,8vw,8rem)] leading-[0.9]">
-              Rebuild your foundation on solid ground.
-            </h1>
-
-            <p className="mt-8 max-w-xl text-lg leading-8 text-[var(--text-secondary)]">
-              Specialized therapy for adults, couples, teens, and children.
-            </p>
-          </div>
-        </div>
-      </section>
-    </main>
+      <main>
+        <Hero />
+        <Introsection />
+        <WhoWeHelp />
+        <FinalCTA />
+        <Expertise />
+        <HowWeWork />
+        <Family />
+        <Specialties />
+        <ScheduleAppointment />
+        <Footer />
+      </main>
+    </>
   );
 }

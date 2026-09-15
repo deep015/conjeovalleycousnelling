@@ -1,6 +1,40 @@
 @import "tailwindcss";
 
+/* =========================================================
+   FONTS
+   ========================================================= */
+
+@font-face {
+  font-family: "Muli";
+  src: url("/fonts/Muli-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Muli";
+  src: url("/fonts/Muli-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Printed Moments";
+  src: url("/fonts/Printed-Moments.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* =========================================================
+   ROOT / DESIGN TOKENS
+   ========================================================= */
+
 :root {
+  /* Main colors */
   --background: #f7f4ee;
   --foreground: #252525;
 
@@ -16,16 +50,39 @@
   --accent: #252525;
   --accent-hover: #44413c;
 
+  /* Fonts */
+
+  --font-body: "Muli", sans-serif;
+  --font-heading: "Cormorant Garamond", serif;
+  --font-script: var(--font-script-google), cursive;
+
+
+  /* Layout */
   --container-width: 1280px;
   --container-padding: clamp(1.25rem, 4vw, 4rem);
-
   --section-space: clamp(5rem, 10vw, 9rem);
 
-  --radius-sm: 2px;
+  /* Existing project colors */
+  --cream: #f6f4ee;
+  --dark: #292929;
+  --body-text: #4d4b48;
+  --blue: #173d57;
+  --teal: #79b6bb;
 
+  /* Existing layout values */
+  --header-height: 169px;
+  --hero-height: 640px;
+
+  /* UI */
+  --radius-sm: 2px;
   --transition-fast: 180ms ease;
   --transition-normal: 300ms ease;
 }
+
+
+/* =========================================================
+   RESET / BASE
+   ========================================================= */
 
 * {
   box-sizing: border-box;
@@ -35,12 +92,17 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
 body {
   margin: 0;
-  background: var(--background);
-  color: var(--foreground);
+  padding: 0;
+}
 
-  font-family: var(--font-body), sans-serif;
+body {
+  background: var(--cream);
+  color: var(--dark);
+  font-family: var(--font-body);
+  overflow-x: hidden;
 
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -51,13 +113,13 @@ a {
   text-decoration: none;
 }
 
+button {
+  font: inherit;
+}
+
 button,
 a {
   -webkit-tap-highlight-color: transparent;
-}
-
-button {
-  font: inherit;
 }
 
 img {
@@ -70,10 +132,620 @@ img {
   color: var(--background);
 }
 
+
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+
 h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-heading), serif;
+  margin-top: 0;
+  font-family: var(--font-heading);
   font-weight: 400;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.site-header {
+  position: relative;
+  width: 100%;
+  height: var(--header-height);
+  background: var(--cream);
+  z-index: 100;
+}
+
+.site-header-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  padding-left: 6.05vw;
+  padding-right: 5.1vw;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.site-logo {
+  display: block;
+  width: 230px;
+  margin-top: 36px;
+  flex-shrink: 0;
+}
+
+.site-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.desktop-navigation {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+  padding-top: 59px;
+}
+
+.navigation-link {
+  position: relative;
+
+  color: #3d3c3a;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+
+  letter-spacing: 0.11em;
+  line-height: 1;
+  white-space: nowrap;
+
+  transition: opacity 0.2s ease;
+}
+
+.navigation-link:hover {
+  opacity: 0.55;
+}
+
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.contact-link {
+  width: 111px;
+  height: 50px;
+
+  margin-top: -10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #464646;
+  border-radius: 50%;
+
+  color: #444;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 400;
+
+  letter-spacing: 0.12em;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.contact-link:hover {
+  background: var(--dark);
+  color: var(--cream);
+}
+
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+.mobile-menu-button {
+  display: none;
+
+  width: 40px;
+  height: 40px;
+
+  padding: 0;
+  border: 0;
+  background: transparent;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.mobile-menu-button span {
+  display: block;
+
+  width: 24px;
+  height: 1px;
+
+  background: var(--dark);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero-section {
+  position: relative;
+
+  width: 100%;
+  height: var(--hero-height);
+
+  background: var(--cream);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   HERO - LEFT IMAGE
+   ========================================================= */
+
+.hero-left-image {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 34.55%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.hero-image {
+  object-fit: cover;
+  object-position: center center;
+}
+
+
+/* =========================================================
+   HERO - CENTER CONTENT
+   ========================================================= */
+
+.hero-content {
+  position: absolute;
+
+  left: 42.8%;
+  top: 0;
+
+  width: 48%;
+  height: 100%;
+
+  z-index: 10;
+}
+
+
+/* =========================================================
+   HERO - EYEBROW
+   ========================================================= */
+
+.hero-eyebrow {
+  margin: 11px 0 0;
+
+  color: var(--blue);
+  font-family: var(--font-body);
+
+  font-size: 15px;
+  font-weight: 400;
+
+  line-height: 1.75;
+  letter-spacing: 0.16em;
+}
+
+
+/* =========================================================
+   HERO - MAIN HEADING
+   ========================================================= */
+
+.hero-title {
+  margin: 174px 0 0;
+
+  color: var(--dark);
+  font-family: var(--font-heading);
+
+  font-size: clamp(
+    52px,
+    4.05vw,
+    67px
+  );
+
+  font-weight: 400;
+  line-height: 1.27;
+  letter-spacing: -0.025em;
+}
+
+
+/* =========================================================
+   HERO - SCRIPT WORD
+   ========================================================= */
+
+.hero-script {
+  display: inline-block;
+  color: var(--teal);
+  font-family: var(--font-script);
+  font-size: 1.08em;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: -0.025em;
+  transform: rotate(-2deg);
+  white-space: nowrap;
+}
+
+/* =========================================================
+   HERO - DESCRIPTION
+   ========================================================= */
+
+.hero-description {
+  margin: 36px 0 0;
+
+  color: var(--body-text);
+  font-family: var(--font-body);
+
+  font-size: 16px;
+  font-weight: 400;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   HERO - APPOINTMENT
+   ========================================================= */
+
+.hero-appointment {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 45px;
+
+  margin-top: 51px;
+  padding-bottom: 9px;
+
+  border-bottom: 1px solid #555;
+
+  color: #4c4b49;
+  font-family: var(--font-body);
+
+  font-size: 13px;
+  font-weight: 400;
+
+  letter-spacing: 0.12em;
+  line-height: 1;
+
+  transition:
+    opacity 0.2s ease,
+    gap 0.2s ease;
+}
+
+.hero-appointment:hover {
+  opacity: 0.65;
+  gap: 55px;
+}
+
+.appointment-arrow {
+  font-size: 22px;
+  line-height: 0;
+  letter-spacing: 0;
+}
+
+
+/* =========================================================
+   HERO - RIGHT IMAGE
+   ========================================================= */
+
+.hero-right-image {
+  position: absolute;
+
+  top: 217px;
+  right: 0;
+
+  width: 8.05%;
+  height: 422px;
+
+  overflow: hidden;
+
+  z-index: 20;
+}
+
+.hero-right-image-content {
+  object-fit: cover;
+  object-position: center center;
+}
+
+
+/* =========================================================
+   LAPTOP
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  :root {
+    --header-height: 145px;
+    --hero-height: 590px;
+  }
+
+  .site-header-inner {
+    padding-left: 5vw;
+    padding-right: 4vw;
+  }
+
+  .site-logo {
+    width: 205px;
+    margin-top: 31px;
+  }
+
+  .desktop-navigation {
+    gap: 27px;
+    padding-top: 51px;
+  }
+
+  .navigation-link {
+    font-size: 11px;
+  }
+
+  .contact-link {
+    width: 95px;
+    height: 44px;
+    margin-top: -8px;
+    font-size: 10px;
+  }
+
+  .hero-content {
+    left: 42%;
+    width: 49%;
+  }
+
+  .hero-eyebrow {
+    font-size: 12px;
+  }
+
+  .hero-title {
+    margin-top: 135px;
+
+    font-size: clamp(
+      42px,
+      4.8vw,
+      56px
+    );
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .hero-right-image {
+    top: 190px;
+    height: 390px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  :root {
+    --header-height: 120px;
+    --hero-height: 600px;
+  }
+
+  .site-header-inner {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .site-logo {
+    width: 190px;
+    margin-top: 28px;
+  }
+
+  .desktop-navigation {
+    gap: 17px;
+    padding-top: 45px;
+  }
+
+  .navigation-link {
+    font-size: 9px;
+  }
+
+  .contact-link {
+    width: 82px;
+    height: 39px;
+    font-size: 9px;
+  }
+
+  .hero-content {
+    left: 40%;
+    width: 54%;
+  }
+
+  .hero-title {
+    margin-top: 110px;
+    font-size: 46px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+  :root {
+    --header-height: 92px;
+  }
+
+  /* Header */
+
+  .site-header-inner {
+    height: var(--header-height);
+
+    padding-left: 22px;
+    padding-right: 22px;
+
+    align-items: center;
+  }
+
+  .site-logo {
+    width: 190px;
+    margin-top: 0;
+  }
+
+  .desktop-navigation {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: flex;
+  }
+
+
+  /* Hero */
+
+  .hero-section {
+    height: auto;
+
+    overflow: visible;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-left-image {
+    position: relative;
+
+    order: 1;
+
+    width: 100%;
+    height: 470px;
+  }
+
+  .hero-content {
+    position: relative;
+
+    order: 2;
+
+    left: auto;
+    top: auto;
+
+    width: 100%;
+    height: auto;
+
+    padding: 48px 24px 75px;
+  }
+
+  .hero-eyebrow {
+    margin: 0;
+
+    font-size: 10px;
+
+    line-height: 1.8;
+    letter-spacing: 0.14em;
+  }
+
+  .hero-title {
+    margin-top: 53px;
+
+    font-size: clamp(
+      42px,
+      12vw,
+      58px
+    );
+
+    line-height: 1.08;
+  }
+
+  .hero-description {
+    margin-top: 30px;
+    font-size: 15px;
+  }
+
+  .hero-appointment {
+    margin-top: 38px;
+    font-size: 11px;
+  }
+
+  .hero-right-image {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   REUSABLE FONT UTILITY CLASSES
+   ========================================================= */
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+
+/* =========================================================
+   REUSABLE ANIMATED UNDERLINE
+   ========================================================= */
+
+.link-underline {
+  position: relative;
+
+  display: inline-block;
+
+  padding-bottom: 8px;
+}
+
+.link-underline::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background-color: #333333;
+
+  transform: scaleX(1);
+  transform-origin: left;
+
+  transition: transform 0.5s ease;
+}
+
+.link-underline:hover::after {
+  transform: scaleX(0.1);
 }
